@@ -1,3 +1,3 @@
-# personal_portofolio
+# Personal Portofolio
 
-A new Flutter project.
+My Personal Portofolio
