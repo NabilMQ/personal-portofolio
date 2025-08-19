@@ -105,9 +105,7 @@ class _BodyContactState extends State<BodyContact> {
                                   ),
                                 );
                               }
-                              catch (e) {
-                                debugPrint("Faild copying: ${e}");
-                              }
+                              catch (e) {}
                             }
                           },
                           child: Row(
