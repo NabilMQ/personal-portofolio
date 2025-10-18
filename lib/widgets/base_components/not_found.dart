@@ -6,11 +6,12 @@ class NotFound extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.surfaceContainerLow,
       body: SizedBox.expand(
         child: Center(
           child: Text(
             "Page Not Found",
-            style: Theme.of(context).textTheme.titleMedium!,
+            style: Theme.of(context).textTheme.titleLarge!,
           ),
         ),
       ),

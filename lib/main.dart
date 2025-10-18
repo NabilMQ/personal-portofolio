@@ -1,12 +1,15 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:personal_portofolio/constants/custom_theme_color.dart';
 import 'package:personal_portofolio/constants/scroll_behaviour.dart';
 import 'package:personal_portofolio/routes.dart';
-import 'package:personal_portofolio/widgets/base_components/not_found.dart';
 import 'package:toastification/toastification.dart';
-
+import 'package:flutter_web_plugins/url_strategy.dart';
 
 void main() {
+  if (kIsWeb) {
+    usePathUrlStrategy();
+  }
   runApp(const MainApp());
 }
 
@@ -16,7 +19,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ToastificationWrapper(
-      child: MaterialApp(
+      child: MaterialApp.router(
         title: "NabilMQ | Personal Portofolio",
         scrollBehavior: CustomScrollBehavior(),
         theme: ThemeData(
@@ -176,15 +179,7 @@ class MainApp extends StatelessWidget {
           ),
         ),
         debugShowCheckedModeBanner: false,
-        initialRoute: "/",
-        routes: routes,
-        onUnknownRoute:(settings) {
-          return MaterialPageRoute(
-            builder: (context) {
-              return NotFound();
-            },
-          );
-        },
+        routerConfig: routes,
       ),
     );
   }
