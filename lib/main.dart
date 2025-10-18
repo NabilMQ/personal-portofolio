@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:personal_portofolio/constants/custom_theme_color.dart';
 import 'package:personal_portofolio/constants/scroll_behaviour.dart';
-import 'package:personal_portofolio/home_page.dart';
+import 'package:personal_portofolio/routes.dart';
+import 'package:personal_portofolio/widgets/base_components/not_found.dart';
 import 'package:toastification/toastification.dart';
+
 
 void main() {
   runApp(const MainApp());
@@ -174,13 +176,15 @@ class MainApp extends StatelessWidget {
           ),
         ),
         debugShowCheckedModeBanner: false,
-        home: LayoutBuilder(
-          builder: (context, constraints) {
-            return SelectionArea(
-              child: HomePage(),
-            );
-          }
-        ),
+        initialRoute: "/",
+        routes: routes,
+        onUnknownRoute:(settings) {
+          return MaterialPageRoute(
+            builder: (context) {
+              return NotFound();
+            },
+          );
+        },
       ),
     );
   }
