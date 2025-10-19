@@ -1,6 +1,9 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:personal_portofolio/constants/global.dart';
 import 'package:personal_portofolio/widgets/base_components/custom_loop_scroll.dart';
+import 'package:toastification/toastification.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Project extends StatefulWidget {
   const Project({
@@ -78,10 +81,85 @@ class _ProjectState extends State<Project> {
               
                         Expanded(
                           child: SingleChildScrollView(
-                            child: Text(
-                              widget.projectDescription,
-                              style: Theme.of(context).textTheme.bodySmall,
-                              textAlign: TextAlign.center,
+                            child: Builder(
+                              builder: (context) {
+                                if (widget.projectName == "Personal Portofolio") {
+                                  return RichText(
+                                    text: TextSpan(
+                                      children: [
+                                        TextSpan(
+                                          text: "My Own Website Portofolio. There is the ",
+                                          style: Theme.of(context).textTheme.bodySmall,
+                                        ),
+                                        TextSpan(
+                                          text: "Flutter version",
+                                          style: Theme.of(context).textTheme.bodySmall!.apply(
+                                            decoration: TextDecoration.underline,
+                                          ),
+                                          recognizer: TapGestureRecognizer()..onTap = () async {
+                                            if (!await launchUrl(Uri.parse("https://nabilmq-personal-portofolio.vercel.app/"))) {
+                                              if (context.mounted) {
+                                                toastification.dismissAll();
+                                                toastification.show(
+                                                  dismissDirection: DismissDirection.startToEnd,
+                                                  style: ToastificationStyle.fillColored,
+                                                  type: ToastificationType.error,
+                                                  icon: Icon(
+                                                    Icons.error_outline_rounded
+                                                  ),
+                                                  autoCloseDuration: Duration(seconds: 3),
+                                                  dragToClose: true,
+                                                  description: Text(
+                                                    "Could not go to the new page\nPlease try again later",
+                                                  ),
+                                                );
+                                              }
+                                            }
+                                          },
+                                          mouseCursor: SystemMouseCursors.click,
+                                        ),
+                                        TextSpan(
+                                          text: " and the ",
+                                          style: Theme.of(context).textTheme.bodySmall,
+                                        ),
+                                        TextSpan(
+                                          text: "Nextjs version",
+                                          style: Theme.of(context).textTheme.bodySmall!.apply(
+                                            decoration: TextDecoration.underline,
+                                          ),
+                                          recognizer: TapGestureRecognizer()..onTap = () async {
+                                            if (!await launchUrl(Uri.parse("https://nabilmq.vercel.app/"))) {
+                                              if (context.mounted) {
+                                                toastification.dismissAll();
+                                                toastification.show(
+                                                  dismissDirection: DismissDirection.startToEnd,
+                                                  style: ToastificationStyle.fillColored,
+                                                  type: ToastificationType.error,
+                                                  icon: Icon(
+                                                    Icons.error_outline_rounded
+                                                  ),
+                                                  autoCloseDuration: Duration(seconds: 3),
+                                                  dragToClose: true,
+                                                  description: Text(
+                                                    "Could not go to the new page\nPlease try again later",
+                                                  ),
+                                                );
+                                              }
+                                            }
+                                          },
+                                          mouseCursor: SystemMouseCursors.click,
+                                        ),
+                                      ],
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  );
+                                }
+                                return Text(
+                                  widget.projectDescription,
+                                  style: Theme.of(context).textTheme.bodySmall,
+                                  textAlign: TextAlign.center,
+                                );
+                              }
                             ),
                           ),
                         ),

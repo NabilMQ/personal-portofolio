@@ -50,7 +50,7 @@ class _BodyContactState extends State<BodyContact> {
                 ),
                 child: SizedBox(
                   child: Wrap(
-                    alignment: WrapAlignment.start,
+                    alignment: WrapAlignment.center,
                     runAlignment: WrapAlignment.center,
                     crossAxisAlignment: WrapCrossAlignment.center,
                     spacing: 12,

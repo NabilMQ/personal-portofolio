@@ -51,10 +51,11 @@ class _BodyProjectsState extends State<BodyProjects> {
                     Project(
                       projectImagePath: ImagesString.personalPortofolio,
                       projectName: "Personal Portofolio",
-                      projectDescription: "My Own Website Portofolio",
+                      projectDescription: "My Own Website Portofolio. There is the Flutter version and the Nextjs Version",
                       projectTechStackLoopDuration: Duration(seconds: 5),
                       projectTechStackImages: [
                         ImagesString.flutter,
+                        ImagesString.nextjs,
                       ],
                     ),
                   ],
