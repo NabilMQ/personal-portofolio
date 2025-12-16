@@ -128,7 +128,7 @@ class _ProjectState extends State<Project> {
                                             decoration: TextDecoration.underline,
                                           ),
                                           recognizer: TapGestureRecognizer()..onTap = () async {
-                                            if (!await launchUrl(Uri.parse("https://nabilmq.vercel.app/"))) {
+                                            if (!await launchUrl(Uri.parse("https://nabilmq.my.id/"))) {
                                               if (context.mounted) {
                                                 toastification.dismissAll();
                                                 toastification.show(
