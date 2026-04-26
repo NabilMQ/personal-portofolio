@@ -14,6 +14,7 @@ class ImagesString {
   static String tailwind = "assets/images/tech-stack/tailwind.png";
   static String typescript = "assets/images/tech-stack/typescript.png";
   static String vue = "assets/images/tech-stack/vue.png";
+  static String wordpress = "assets/images/tech-stack/wordpress.png";
 
   // ACHIEVEMENTS IMAGES
   static String gdscSolutionChallenge = "assets/images/achievements/gdsc_solution_challenge.jpeg";
@@ -25,4 +26,5 @@ class ImagesString {
   // PROJECTS IMAGES
   static String sirene = "assets/images/projects/sirene.png";
   static String personalPortofolio = "assets/images/projects/personal-portofolio.png";
+  static String desaWisataCokroWebsite = "assets/images/projects/desa-wisata-cokro-website.jpeg";
 }

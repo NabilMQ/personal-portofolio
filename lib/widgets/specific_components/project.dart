@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:personal_portofolio/constants/global.dart';
+import 'package:personal_portofolio/util/open_link.dart';
 import 'package:personal_portofolio/widgets/base_components/custom_loop_scroll.dart';
 import 'package:toastification/toastification.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -97,24 +98,7 @@ class _ProjectState extends State<Project> {
                                             decoration: TextDecoration.underline,
                                           ),
                                           recognizer: TapGestureRecognizer()..onTap = () async {
-                                            if (!await launchUrl(Uri.parse("https://nabilmq-personal-portofolio.vercel.app/"))) {
-                                              if (context.mounted) {
-                                                toastification.dismissAll();
-                                                toastification.show(
-                                                  dismissDirection: DismissDirection.startToEnd,
-                                                  style: ToastificationStyle.fillColored,
-                                                  type: ToastificationType.error,
-                                                  icon: Icon(
-                                                    Icons.error_outline_rounded
-                                                  ),
-                                                  autoCloseDuration: Duration(seconds: 3),
-                                                  dragToClose: true,
-                                                  description: Text(
-                                                    "Could not go to the new page\nPlease try again later",
-                                                  ),
-                                                );
-                                              }
-                                            }
+                                            openLink(context, "https://nabilmq-personal-portofolio.vercel.app/");
                                           },
                                           mouseCursor: SystemMouseCursors.click,
                                         ),
@@ -128,26 +112,37 @@ class _ProjectState extends State<Project> {
                                             decoration: TextDecoration.underline,
                                           ),
                                           recognizer: TapGestureRecognizer()..onTap = () async {
-                                            if (!await launchUrl(Uri.parse("https://nabilmq.my.id/"))) {
-                                              if (context.mounted) {
-                                                toastification.dismissAll();
-                                                toastification.show(
-                                                  dismissDirection: DismissDirection.startToEnd,
-                                                  style: ToastificationStyle.fillColored,
-                                                  type: ToastificationType.error,
-                                                  icon: Icon(
-                                                    Icons.error_outline_rounded
-                                                  ),
-                                                  autoCloseDuration: Duration(seconds: 3),
-                                                  dragToClose: true,
-                                                  description: Text(
-                                                    "Could not go to the new page\nPlease try again later",
-                                                  ),
-                                                );
-                                              }
-                                            }
+                                            openLink(context, "https://nabilmq.my.id/");
                                           },
                                           mouseCursor: SystemMouseCursors.click,
+                                        ),
+                                      ],
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  );
+                                }
+
+                                else if (widget.projectName == "Desa Wisata Cokro Website") {
+                                  return RichText(
+                                    text: TextSpan(
+                                      children: [
+                                        TextSpan(
+                                          text: "Created with Wordpress to introduce and promote Desa Wisata Cokro. The website can be accessed through this ",
+                                          style: Theme.of(context).textTheme.bodySmall,
+                                        ),
+                                        TextSpan(
+                                          text: "link",
+                                          style: Theme.of(context).textTheme.bodySmall!.apply(
+                                            decoration: TextDecoration.underline,
+                                          ),
+                                          recognizer: TapGestureRecognizer()..onTap = () async {
+                                            openLink(context, "https://desawisatacokro.wordpress.com/");
+                                          },
+                                          mouseCursor: SystemMouseCursors.click,
+                                        ),
+                                        TextSpan(
+                                          text: ".",
+                                          style: Theme.of(context).textTheme.bodySmall,
                                         ),
                                       ],
                                     ),

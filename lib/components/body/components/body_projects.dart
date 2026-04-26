@@ -58,6 +58,16 @@ class _BodyProjectsState extends State<BodyProjects> {
                         ImagesString.nextjs,
                       ],
                     ),
+
+                    Project(
+                      projectImagePath: ImagesString.desaWisataCokroWebsite,
+                      projectName: "Desa Wisata Cokro Website",
+                      projectDescription: "Created with Wordpress to introduce and promote Desa Wisata Cokro. The website can be accessed through This Link.",
+                      projectTechStackLoopDuration: Duration(seconds: 5),
+                      projectTechStackImages: [
+                        ImagesString.wordpress,
+                      ],
+                    ),
                   ],
                 ),
               ),
