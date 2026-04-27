@@ -138,10 +138,6 @@ class _ProjectState extends State<Project> {
                                           },
                                           mouseCursor: SystemMouseCursors.click,
                                         ),
-                                        TextSpan(
-                                          text: ".",
-                                          style: Theme.of(context).textTheme.bodySmall,
-                                        ),
                                       ],
                                     ),
                                     textAlign: TextAlign.center,

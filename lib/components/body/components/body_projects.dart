@@ -62,7 +62,7 @@ class _BodyProjectsState extends State<BodyProjects> {
                     Project(
                       projectImagePath: ImagesString.desaWisataCokroWebsite,
                       projectName: "Desa Wisata Cokro Website",
-                      projectDescription: "Created with Wordpress to introduce and promote Desa Wisata Cokro. The website can be accessed through This Link.",
+                      projectDescription: "Created with Wordpress to introduce and promote Desa Wisata Cokro. The website can be accessed through this link",
                       projectTechStackLoopDuration: Duration(seconds: 5),
                       projectTechStackImages: [
                         ImagesString.wordpress,
