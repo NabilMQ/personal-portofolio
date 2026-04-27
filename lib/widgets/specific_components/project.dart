@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:personal_portofolio/constants/global.dart';
 import 'package:personal_portofolio/util/open_link.dart';
 import 'package:personal_portofolio/widgets/base_components/custom_loop_scroll.dart';
-import 'package:toastification/toastification.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class Project extends StatefulWidget {
   const Project({
